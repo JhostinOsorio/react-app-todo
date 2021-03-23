@@ -1,0 +1,42 @@
+.form-todo {
+  margin-top: 2rem;
+}
+
+.form-group {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFF;
+  padding: .75em 1.25em;
+  border-radius: .5em;
+}
+
+.form-group::before {
+  flex: none;
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 2px solid $very-light-grayish-blue;
+  border-radius: 50%;
+  margin-right: 1em;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  font-size: $font-size;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: $dark-grayish-blue;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.form-input::placeholder {
+  font-weight: 400;
+  // color: $light-grayish-blue;
+  color: inherit;
+  font-family: inherit;
+}
