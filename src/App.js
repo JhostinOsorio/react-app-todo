@@ -1,13 +1,11 @@
 import React from 'react';
-import FormTodo from './components/FormTodo';
-import HeaderTodo from './components/HeaderTodo';
+import Home from './pages/Home';
 import './styles/style.scss';
 
 function App() {
   return (
     <>
-      <HeaderTodo/>
-      <FormTodo/>
+      <Home/>
     </>
   );
 }

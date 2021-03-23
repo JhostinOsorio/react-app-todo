@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import InputTodo from './InputTodo';
 
-const FormTodo = () => {
+const FormTodo = ({ handleAddTodo }) => {
 
   const [newTodo, setNewTodo] = useState('');
 
@@ -9,12 +9,14 @@ const FormTodo = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    alert(newTodo);
+    handleAddTodo(newTodo);
+    setNewTodo('')
   }
 
   return (
     <form className="form-todo wrapper" onSubmit={handleSubmit}>
       <InputTodo
+        todo={newTodo}
         handleChange={handleChange}
       />
     </form>
