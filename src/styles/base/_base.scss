@@ -1,0 +1,14 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: $font-size;
+}
+body {
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+}
