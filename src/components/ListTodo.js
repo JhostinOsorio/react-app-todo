@@ -1,10 +1,18 @@
 import React from 'react';
+import ListItem from './ListItem';
 
-const ListTodo = () => {
+const ListTodo = ({ todos, handleStatusTodo, handleDeleteTodo }) => {
   return (
-    <div>
-      
-    </div>
+    <ul className="wrapper list-todo">
+      {todos.map((t, i) => 
+        <ListItem 
+          key={i} 
+          name={t.name} 
+          status={t.status}
+          handleStatusTodo={handleStatusTodo}
+          handleDeleteTodo={handleDeleteTodo} 
+        />)}
+    </ul>
   )
 }
 
