@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import arrayMove from 'array-move';
 import FormTodo from '../components/FormTodo';
 import HeaderTodo from '../components/HeaderTodo';
 import ListTodo from '../components/ListTodo';
@@ -30,8 +31,11 @@ const Home = () => {
 
   const handleDeleteTodo = name => {
     const array_todos = todos.filter(t => t.name !== name)
-    console.log(array_todos)
     setTodos(array_todos)
+  }
+
+  const onSortEnd = ({ oldIndex, newIndex }) => {
+    setTodos(arrayMove(todos, oldIndex, newIndex))
   }
   
   useEffect(() => {
@@ -46,8 +50,10 @@ const Home = () => {
       />
       <ListTodo
         todos={todos}
+        setTodos={setTodos}
         handleStatusTodo={handleStatusTodo}
         handleDeleteTodo={handleDeleteTodo}
+        onSortEnd={onSortEnd}
       />
     </>
   )
